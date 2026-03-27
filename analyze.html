@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyze - Skill Gap Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <h1 class="logo">Skill Gap Analyzer</h1>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+      <button id="profile-btn" aria-label="Profile">👤</button>
+      <div id="user-info" class="user-info hidden">
+        <span id="user-name" class="user-greeting">User</span>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+      <button id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section id="analyze" class="card">
+    <div class="container">
+      <h2>Analyze Your Skills</h2>
+      <div class="form-group">
+        <label for="role">Select Career Role</label>
+        <select id="role">
+          <option value="">-- Pick a role --</option>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Full Stack Developer</option>
+          <option value="data">Data Analyst</option>
+          <option value="uiux">UI/UX Designer</option>
+          <option value="cyber">Cybersecurity Analyst</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="skills">Enter your skills (comma or space separated)</label>
+        <input type="text" id="skills" placeholder="e.g., HTML, CSS, JavaScript" />
+      </div>
+
+      <button id="analyze-btn" class="btn">Analyze Skills</button>
+
+      <div id="result" class="result-card hidden">
+        <h4>Analysis Result</h4>
+        <p><strong>Selected Role:</strong> <span id="res-role">-</span></p>
+        <p><strong>Required Skills:</strong> <span id="res-required">-</span></p>
+        <p><strong>Your Selected Skills:</strong> <span id="res-selected">-</span></p>
+        <p><strong>Matched Skills:</strong> <span id="res-matched">-</span></p>
+        <p><strong>Missing Skills:</strong> <span id="res-missing">-</span></p>
+
+        <div class="progress-info">
+          <span>Readiness: <strong id="res-percentage">0%</strong></span>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="suggestions" class="suggestions">
+          <h5>Improvement Suggestions</h5>
+          <ul id="suggestion-list"></ul>
+        </div>
+
+        <div id="roadmap" class="learning-roadmap hidden">
+          <h5>📚 Personalized Learning Roadmap</h5>
+          <div id="roadmap-list" class="roadmap-steps"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Career Skill Gap Analyzer</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

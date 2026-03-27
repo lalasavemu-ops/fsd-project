@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Skill Gap Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <h1 class="logo">Skill Gap Analyzer</h1>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#analyze">Analyze</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+      <button id="profile-btn" aria-label="Profile">👤</button>
+      <div id="user-info" class="user-info hidden">
+        <span id="user-name" class="user-greeting">User</span>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+      <button id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero card modern-home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="welcome">Hi, Lalasa 👋</p>
+        <h1>Ready to improve today?</h1>
+        <p class="hero-subtitle">Track your strengths, highlight gaps, and build a smarter learning path with actionable insights.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary">Start Skill Assessment</button>
+          <button class="btn btn-secondary">View Progress Dashboard</button>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat"> <strong>12</strong><span>Skills tracked</span> </div>
+          <div class="stat"> <strong>5</strong><span>Active goals</span> </div>
+          <div class="stat"> <strong>0</strong><span>Outstanding tasks</span> </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="card">
+    <div class="container">
+      <h3>About / Problem Statement</h3>
+      <p>Students often worry if their skill set matches industry expectations. This tool highlights missing skills and readiness for a chosen career.</p>
+    </div>
+  </section>
+
+  <section id="analyze" class="card">
+    <div class="container">
+      <h3>Analyze Your Skills</h3>
+      <div class="form-group">
+        <label for="career-select">Select Career Role</label>
+        <select id="career-select">
+          <option value="">-- Pick a role --</option>
+          <option value="frontend">Frontend Developer</option>
+          <option value="backend">Backend Developer</option>
+          <option value="fullstack">Full Stack Developer</option>
+          <option value="data">Data Analyst</option>
+          <option value="uiux">UI/UX Designer</option>
+          <option value="cyber">Cybersecurity Analyst</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <p>Select your skills (tick all known):</p>
+        <div class="skills-grid">
+          <label><input type="checkbox" value="HTML" class="skill-checkbox" /> HTML</label>
+          <label><input type="checkbox" value="CSS" class="skill-checkbox" /> CSS</label>
+          <label><input type="checkbox" value="JavaScript" class="skill-checkbox" /> JavaScript</label>
+          <label><input type="checkbox" value="Git" class="skill-checkbox" /> Git</label>
+          <label><input type="checkbox" value="Communication" class="skill-checkbox" /> Communication</label>
+          <label><input type="checkbox" value="Node.js" class="skill-checkbox" /> Node.js</label>
+          <label><input type="checkbox" value="SQL" class="skill-checkbox" /> SQL</label>
+          <label><input type="checkbox" value="Problem Solving" class="skill-checkbox" /> Problem Solving</label>
+          <label><input type="checkbox" value="Python" class="skill-checkbox" /> Python</label>
+          <label><input type="checkbox" value="Figma" class="skill-checkbox" /> Figma</label>
+        </div>
+      </div>
+
+      <button id="analyze-btn" class="btn">Analyze Skills</button>
+
+      <div id="result" class="result-card hidden">
+        <h4>Analysis Result</h4>
+        <p><strong>Selected Role:</strong> <span id="res-role">-</span></p>
+        <p><strong>Required Skills:</strong> <span id="res-required">-</span></p>
+        <p><strong>Your Selected Skills:</strong> <span id="res-selected">-</span></p>
+        <p><strong>Matched Skills:</strong> <span id="res-matched">-</span></p>
+        <p><strong>Missing Skills:</strong> <span id="res-missing">-</span></p>
+
+        <div class="progress-info">
+          <span>Readiness: <strong id="res-percentage">0%</strong></span>
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="suggestions" class="suggestions">
+          <h5>Improvement Suggestions</h5>
+          <ul id="suggestion-list"></ul>
+        </div>
+
+        <div id="roadmap" class="learning-roadmap hidden">
+          <h5>📚 Personalized Learning Roadmap</h5>
+          <div id="roadmap-list" class="roadmap-steps"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="card">
+    <div class="container">
+      <h3>Contact</h3>
+      <form id="contact-form">
+        <label>Name <input type="text" id="name" required /></label>
+        <label>Email <input type="email" id="email" required /></label>
+        <label>Message <textarea id="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Career Skill Gap Analyzer • Built with HTML, CSS, JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Profile Modal -->
+  <div id="profile-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">✕</button>
+      <h3>Your Progress</h3>
+      <div class="profile-stats">
+        <div class="chart-container">
+          <canvas id="pie-chart"></canvas>
+        </div>
+        <div class="stats-info">
+          <p><strong>Role:</strong> <span id="profileRole">Not Selected</span></p>
+          <p><strong>Readiness:</strong> <span id="profilePercentage">0</span>%</p>
+          <p><strong>Completed:</strong> <span id="profileMatched">0</span> / <span id="profileTotal">0</span> skills</p>
+          <p><strong>Missing:</strong> <span id="profileMissing">0</span> skills</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

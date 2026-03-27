@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Skill Gap Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <h1 class="logo">Skill Gap Analyzer</h1>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+      <button id="profile-btn" aria-label="Profile">👤</button>
+      <div id="user-info" class="user-info hidden">
+        <span id="user-name" class="user-greeting">User</span>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+      <button id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="card">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Send us a message and we will respond soon.</p>
+
+      <form id="contact-form" class="login-form">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="Your email" required />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" placeholder="Type your message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Career Skill Gap Analyzer</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

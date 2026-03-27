@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Skill Gap Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <h1 class="logo">Skill Gap Analyzer</h1>
+      <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+      <button id="profile-btn" aria-label="Profile">👤</button>
+      <div id="user-info" class="user-info hidden">
+        <span id="user-name" class="user-greeting">User</span>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+      <button id="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero card modern-home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="welcome">Hi, User 👋</p>
+        <h1>Ready to improve today?</h1>
+        <p class="hero-subtitle">Track your strengths, highlight gaps, and build a smarter learning path with actionable insights.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">Start Skill Assessment</button>
+          <button class="btn btn-secondary">View Progress Dashboard</button>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><strong>12</strong><span>Skills tracked</span></div>
+          <div class="stat"><strong>5</strong><span>Active goals</span></div>
+          <div class="stat"><strong>0</strong><span>Outstanding tasks</span></div>
+        </div>
+      </div>
+      <div class="hero-cartoon">
+        <div class="cartoon-card">
+          <img src="data:image/jpeg;base64,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" alt="Skill Gap Analyzer Mascot" />
+          <div class="speech-bubble">Hi!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Career Skill Gap Analyzer</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
